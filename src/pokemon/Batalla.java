@@ -8,13 +8,37 @@ public class Batalla {
     private Pokemons rival;
     private Random r;
     private String ganador;
-
-    // Constructor
+    private boolean batallaTerminada;
+    
     public Batalla(Pokemons jugador, Pokemons rival) {
         this.jugador = jugador;
         this.rival = rival;
         this.r = new Random();
         this.ganador = null;
+        this.batallaTerminada = false;
+    }
+    public Pokemons getJugador() {
+        return jugador;
+    }
+    
+    public Pokemons getRival() {
+        return rival;
+    }
+    
+    public String getGanador() {
+        return ganador;
+    }
+    
+    public void setGanador(String ganador) {
+        this.ganador = ganador;
+    }
+    
+    public boolean isBatallaTerminada() {
+        return batallaTerminada;
+    }
+    
+    public void setBatallaTerminada(boolean batallaTerminada) {
+        this.batallaTerminada = batallaTerminada;
     }
     
     public void iniciar(){
