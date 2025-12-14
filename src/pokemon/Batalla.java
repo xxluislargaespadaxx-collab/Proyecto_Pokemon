@@ -55,7 +55,7 @@ public class Batalla {
         } while (ataques[eleccion] == null || !ataques[eleccion].tienePP());
         
         Ataque ataqueElegido = ataques[eleccion];
-        int danio = calcularDanio(jugador, rival, ataqueElegido);
+        int danio = calcuDano(jugador, rival, ataqueElegido);
         
         System.out.println(jugador.getNombre() + " usa" + ataqueElegido.getNombre() + "!");
         rival.recibirDanio(danio, ataqueElegido.getTipo());
@@ -79,7 +79,7 @@ public class Batalla {
         
         if (ataques[indiceAtaque] != null && ataques[indiceAtaque].tienePP()) {
             Ataque ataque = ataques[indiceAtaque];
-            int danio = calcularDanio(rival, jugador, ataque);
+            int danio = calcuDano(rival, jugador, ataque);
             
             System.out.println(rival.getNombre() + " usa" + ataque.getNombre() + "!");
             jugador.recibirDanio(danio, ataque.getTipo());
@@ -88,7 +88,7 @@ public class Batalla {
         }
     }
     
-    private int calcularDanio(Pokemons atacante, Pokemons defensor, Ataque ataque) {
+    private int calcuDano(Pokemons atacante, Pokemons defensor, Ataque ataque) {
         int nivel = 50;
         int ataqueStat = atacante.getAtaque();
         int defensaStat = defensor.getDefensa();

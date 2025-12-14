@@ -90,7 +90,7 @@ public class Pokemon {
 
     private static void iniciarBatalla() {
         System.out.println("====== PREPARANDO BATALLA ======");
-        Pokemon[] pokemones = pokedex.obPokemonesAle(2);
+        Pokemons[] pokemones = pokedex.obPokemonesAle(2);
         System.out.println("Los Pokemon seleccionados son!");
         System.out.println("1. " + pokemones[0]);
         System.out.println("2. " + pokemones[1]);
@@ -98,8 +98,8 @@ public class Pokemon {
         System.out.println("Que Pokemon quieres usar?: ");
         int eleccion = validarEntero(1, 2);
 
-        Pokemon jugador = pokemones[eleccion - 1];
-        Pokemon rival = (eleccion == 1) ? pokemones[1] : pokemones[0];
+        Pokemons jugador = pokemones[eleccion - 1];
+        Pokemons rival = (eleccion == 1) ? pokemones[1] : pokemones[0];
 
         System.out.println("Has elegido a " + jugador.getNombre() + "!");
         System.out.println("Tu rival usara a" + rival.getNombre() + "!");
@@ -141,7 +141,7 @@ public class Pokemon {
     }
     
     private static void pokemonMasFuerte(){
-        Pokemon fuerte = pokedex.pokemonMasFuerte();
+        Pokemons fuerte = pokedex.pokemonMasFuerte();
         System.out.println("\nEl Pokemon mas fuerte es: " + fuerte);
     }
     
@@ -172,11 +172,11 @@ public class Pokemon {
     }
     
     
-    public static int calcularDano(int poder){
+    public static int calcuDano(int poder){
         return poder + r.nextInt(10);
     }
     
-    public static int calcularDano(int poder, double multiplicador){
+    public static int calcuDano(int poder, double multiplicador){
         return (int)((poder  + r.nextInt(10)) * multiplicador);
     }
     
